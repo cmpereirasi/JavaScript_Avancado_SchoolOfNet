@@ -22,7 +22,11 @@
                 <input type="text" class="form-control" id="desc" placeholder="Descrição">
                 <input type="text" class="form-control" id="amount" placeholder="Amount">
                 <input type="text" class="form-control" id="value" placeholder="Value">
-                <button onclick="addData()" class="btn btn-default">Add</button>
+                <span id="btnUpdate" style="display: none">
+                    <button onclick="updateDate();" class="btn btn-default">Save</button>
+                    <button onclick="resetForm();" class="btn btn-default">Cancel</button>
+                </span>
+                <button id="btnAdd"onclick="addData();" class="btn btn-default">Add</button>
             </div>
         </div>
         <table id="listTable" class="table">
