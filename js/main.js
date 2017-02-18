@@ -31,7 +31,7 @@ function formatValue(value){
 	str = "R$ " + str;
 	return str;
 }
-
+// Preparando para atualizar registros
 function addData(){
 	var desc = document.getElementById("desc").value;
 	var amount = document.getElementById("amount").value;
@@ -39,7 +39,7 @@ function addData(){
 	list.unshift({"desc":desc, "amount":amount, "value":value,});
 	setList(list);
 }
-
+//Update date - Atualizando dados 
 function setUpdate(id){
 	var obj = list[id];
 	document.getElementById("desc").value = obj.desc;
@@ -47,6 +47,8 @@ function setUpdate(id){
 	document.getElementById("value").value = obj.value;
 	document.getElementById("btnUpdate").style.display = "inline-block";
 	document.getElementById("btnAdd").style.display = "none";
+
+	document.getElementById("inputIDUpdate").innerHTML = '<input id="idUpdate" type="hidden" value="'+id+'">';
 }
 
 function resetForm(){
@@ -55,8 +57,21 @@ function resetForm(){
 	document.getElementById("value").value = "";
 	document.getElementById("btnUpdate").style.display = "none";
 	document.getElementById("btnAdd").style.display = "inline-block";
+	document.getElementById("inputIDUpdate").innerHTML = "";
 
 }
+
+function updateDate(){
+	var id = document.getElementById("idUpdate").value;
+	var desc = document.getElementById("desc").value;
+	var amount = document.getElementById("amount").value;
+	var value = document.getElementById("value").value;
+
+	list[id] = {"desc":desc, "amount":amount, "value":value};
+	resetForm();
+	setList(list);
+}
+
 setList(list)
 console.log(getTotal(list));
 
