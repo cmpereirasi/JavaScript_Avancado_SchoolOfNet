@@ -17,6 +17,21 @@
     	</div> 	
     </nav>
     <div class="container-fluid">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="desc" placeholder="Descrição">
+                <input type="text" class="form-control" id="amount" placeholder="Amount">
+                <input type="text" class="form-control" id="value" placeholder="Value">
+
+                <span id="btnUpdate" style="display: none">
+                    <span id="inputIDUpdate"></span>
+
+                    <button onclick="updateDate();" class="btn btn-default">Save</button>
+                    <button onclick="resetForm();" class="btn btn-default">Cancel</button>
+                </span>
+                <button id="btnAdd"onclick="addData();" class="btn btn-default">Add</button>
+            </div>
+        </div>
         <table id="listTable" class="table">
 
         </table> 
